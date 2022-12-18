@@ -1,4 +1,4 @@
-import { Content } from 'src/app/entities/content';
+import { Content } from '../src/app/entities/content';
 import { Notification } from '../src/app/entities/notification';
 
 describe('Notification', () => {

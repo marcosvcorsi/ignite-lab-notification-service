@@ -1,5 +1,6 @@
 import { Replace } from 'src/helpers/replace';
 import { Content } from './content';
+import { ObjectID } from 'bson';
 
 export type NotificationProps = {
   recipientId: string;
@@ -10,13 +11,19 @@ export type NotificationProps = {
 };
 
 export class Notification {
+  private _id: string;
   private props: NotificationProps;
 
   constructor(props: Replace<NotificationProps, { createdAt?: Date }>) {
+    this._id = new ObjectID().toString();
     this.props = {
       ...props,
       createdAt: props.createdAt ?? new Date(),
     };
+  }
+
+  public get id(): string {
+    return this._id;
   }
 
   public set content(content: Content) {
