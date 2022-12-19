@@ -9,7 +9,7 @@ export type SendNotificationRequest = {
   category: string;
 };
 
-export type SendNotificationResponse = {
+export type CancelNotificationResponse = {
   notification: Notification;
 };
 
@@ -21,7 +21,7 @@ export class SendNotificationService {
 
   async execute(
     request: SendNotificationRequest,
-  ): Promise<SendNotificationResponse> {
+  ): Promise<CancelNotificationResponse> {
     const { recipientId, content, category } = request;
 
     const notification = new Notification({

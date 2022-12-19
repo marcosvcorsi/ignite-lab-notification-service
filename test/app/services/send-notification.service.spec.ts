@@ -1,8 +1,8 @@
-import { NotificationsRepository } from '../src/app/repositories/notifications.repository';
+import { NotificationsRepository } from '@/app/repositories/notifications.repository';
 import {
   SendNotificationRequest,
   SendNotificationService,
-} from '../src/app/services/send-notification.service';
+} from '@/app/services/send-notification.service';
 import { mock } from 'jest-mock-extended';
 
 describe('SendNotificationService', () => {
